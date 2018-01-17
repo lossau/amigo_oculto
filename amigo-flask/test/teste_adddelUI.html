@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Sorteador de Amigo Oculto</title>
+
+	<script type="text/javascript">
+	
+		var friendId = 0; // used by the addFile() function to keep track of IDs
+
+		function addFile() {
+		    friendId++;
+		    var html = '<span>Nome: <input type="text"> Email: <input type="text"></span>' +
+					   '<a href="" onclick=\'removeElement("file-' + friendId + '"); return false;\'>Remove</a>';
+		    addElement('files', 'p', 'file-' + friendId, html);
+		}
+
+		function addElement(parentId, elementTag, elementId, html) {
+		    // Adds an element to the document
+		    var p = document.getElementById(parentId);
+		    var newElement = document.createElement(elementTag);
+		    newElement.setAttribute('id', elementId);
+		    newElement.innerHTML = html;
+		    p.appendChild(newElement);
+
+		    document.getElementById("qty").innerHTML=friendId+1;
+
+		}
+
+		function removeElement(elementId) {
+		    // Removes an element from the document
+		    var element = document.getElementById(elementId);
+		    element.remove();
+		    friendId--;
+		    document.getElementById("qty").innerHTML=friendId+1;
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+    <h2>Amigo Oculto Nervoso Julino</h2>
+
+	<form enctype="multipart/form-data" action="" method="post">
+	    <div style="width: 150px; float:left">
+	    	<input type="button" value="Mais participantes" onclick="addFile();" />
+	    </div>
+
+	    <div id="qty" style="">1</div>
+
+	    <p><input type="submit" value="Enviar">
+
+	    <div id="files">
+	        <span>Nome: <input type="text"> Email: <input type="text"></span>
+	    </div>
+	</form>
+
+</body>
+</html>

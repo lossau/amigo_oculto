@@ -1,0 +1,42 @@
+/*verde: #037367*/
+/*vermelho: E41221*/
+/*amarelo: #BA7A05*/
+
+#decreasePeople, #increasePeople{
+	font-size: 20px;
+	color: white;
+	border: 0px;
+	background-color: #037367;
+}
+
+#decreasePeople:hover, #increasePeople:hover {
+	background-color: #E41221;
+}
+
+#numberOfPeople{
+	font-size: 20px;
+	width: 60px;
+	display: inline;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+body {
+	background-color: #037367;
+}
+
+.container input {
+	color: white;
+	background-color: #037367;
+	border: 3px solid;
+	border-color: white;
+	/*padding: 35px;*/
+	margin: 10px;
+}
+
+.container span {
+	color: white;
+	font-size: 20px;
+}
